@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<?import java.net.URL?>
+<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.geekbrains.client.MainController">
+   <children>
+       <VBox fx:id="loginPanel" alignment="CENTER" prefHeight="600.0" prefWidth="800.0" visible="true" >
+          <children>
+              <TextField fx:id="login" alignment="CENTER" maxHeight="30.0" maxWidth="200.0" minHeight="30.0" minWidth="200.0" prefHeight="30.0" prefWidth="200.0" promptText="Login">
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </VBox.margin>
+            </TextField>
+              <PasswordField fx:id="password" alignment="CENTER" maxHeight="30.0" maxWidth="200.0" minHeight="30.0" minWidth="200.0" prefHeight="30.0" prefWidth="200.0" promptText="Password">
+               <font>
+                  <Font name="Times New Roman" size="12.0" />
+               </font>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </VBox.margin>
+            </PasswordField>
+              <HBox alignment="CENTER">
+                 <children>
+                     <Button alignment="CENTER" onAction="#login" prefHeight="30" prefWidth="100.0" text="Войти">
+                     <font>
+                        <Font name="Times New Roman" size="18.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets right="15.0" />
+                     </HBox.margin>
+                  </Button>
+                     <Button alignment="CENTER" onAction="#registration" prefHeight="30" prefWidth="180.0" text="Зарегистрироваться">
+                     <font>
+                        <Font name="Times New Roman" size="18.0" />
+                     </font>
+                  </Button>
+                 </children>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+              </HBox>
+          </children>
+           <stylesheets>
+               <URL value="@style.css" />
+
+           </stylesheets>
+   
+       </VBox>
+       <VBox fx:id="registrationPanel" alignment="CENTER" prefHeight="600.0" prefWidth="800.0" visible="false" >
+          <children>
+              <TextField fx:id="loginReg" alignment="CENTER" maxHeight="30.0" maxWidth="200.0" minHeight="30.0" minWidth="200.0" prefHeight="30.0" prefWidth="200.0" promptText="Login">
+                  <padding>
+                      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                  </padding>
+                  <VBox.margin>
+                      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                  </VBox.margin>
+            </TextField>
+              <PasswordField fx:id="passwordReg" alignment="CENTER" maxHeight="30.0" maxWidth="200.0" minHeight="30.0" minWidth="200.0" prefHeight="30.0" prefWidth="200.0" promptText="Password">
+                  <font>
+                      <Font name="Times New Roman" size="12.0" />
+                  </font>
+                  <padding>
+                      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                  </padding>
+                  <VBox.margin>
+                      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                  </VBox.margin>
+            </PasswordField>
+              <HBox alignment="CENTER">
+                 <children>
+                     <Button alignment="CENTER" onAction="#registrationUserBtn" prefHeight="30" prefWidth="180.0" text="Зарегистрироваться">
+                         <font>
+                             <Font name="Times New Roman" size="18.0" />
+                         </font>
+                     <HBox.margin>
+                        <Insets right="15.0" />
+                     </HBox.margin>
+                  </Button>
+                     <Button alignment="CENTER" onAction="#btnExit" prefHeight="30" prefWidth="180.0" text="Выход">
+                     <font>
+                        <Font name="Times New Roman" size="18.0" />
+                     </font>
+                  </Button>
+                 </children>
+                  <padding>
+                      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                  </padding>
+              </HBox>
+          </children>
+           <stylesheets>
+               <URL value="@style.css" />
+
+           </stylesheets>
+   
+       </VBox>
+       <VBox fx:id="mainCloudPanel" alignment="CENTER" prefHeight="600.0" prefWidth="800.0" visible="false">
+          <children>
+      
+          <MenuBar>
+         <menus>
+                 <Menu text="File">
+                    <items>
+            
+                        <MenuItem onAction="#upload" text="Upload file" />
+                        <MenuItem onAction="#btnExit" text="Exit" />
+                    </items>
+                 </Menu>
+                 <Menu text="Help">
+                    <items>
+                        <MenuItem text="About" />
+                    </items>
+         
+                 </Menu>
+         </menus>
+          </MenuBar>
+      
+          <HBox VBox.vgrow="ALWAYS">
+         <children>
+                 <VBox HBox.hgrow="ALWAYS">
+                    <children>
+                        <Text text="Cloud server" />
+                        <HBox>
+                           <children>
+               
+               <!--                <TextField fx:id="pathField" HBox.hgrow="ALWAYS" editable="false"/>-->
+                               <Button onAction="#btnPathUpSrv" text="UP" />
+                           </children>
+            
+            <!--                <Button text="Refresh fils" onAction="#btnRefresh"/>-->
+            
+            
+                        </HBox>
+            <!--            <TableView fx:id="filesTableServer" VBox.vgrow="ALWAYS" HBox.hgrow="ALWAYS"/>-->
+                    <ListView fx:id="filesTableServer" HBox.hgrow="ALWAYS" VBox.vgrow="ALWAYS" />
+                    </children>
+                 </VBox>
+                 <VBox HBox.hgrow="ALWAYS">
+                    <children>
+                        <Text text="Local files" />
+                        <HBox>
+                           <children>
+               
+               
+                               <ComboBox fx:id="localDisksClient" onAction="#selectDisk" />
+                               <TextField fx:id="pathFieldClient" editable="false" HBox.hgrow="ALWAYS" />
+                               <Button onAction="#btnPathUpClient" text="UP" />
+                           </children>
+                        </HBox>
+                        <TableView fx:id="filesTableClient" HBox.hgrow="ALWAYS" VBox.vgrow="ALWAYS" />
+                    </children>
+         
+                 </VBox>
+         </children>
+          </HBox>
+          <HBox spacing="5">
+             <children>
+                 <Button focusTraversable="false" maxWidth="Infinity" onAction="#upload" text="Загрузить" HBox.hgrow="ALWAYS" />
+                 <Button focusTraversable="false" maxWidth="Infinity" onAction="#download" text="Скачать" HBox.hgrow="ALWAYS" />
+                 <Button focusTraversable="false" maxWidth="Infinity" onAction="#deleteFile" text="Удалить" HBox.hgrow="ALWAYS" />
+                 <Button focusTraversable="false" maxWidth="Infinity" onAction="#btnExit" text="Выход" HBox.hgrow="ALWAYS" />
+             </children>
+              <padding>
+                  <Insets bottom="5" left="5" right="5" top="5" />
+              </padding>
+          </HBox>
+          </children>
+   </VBox>
+   </children>
+</AnchorPane>
